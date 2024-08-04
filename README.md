@@ -1,9 +1,23 @@
 Installation:
-```
+
 -pull this repo
--install composer
--composer install
+```
+git pull https://github.com/kenzahem/bhd-new.git
+```
+Install composer and execute this command
+```
+composer install
+```
+Cleaning caches
+```
 -php artisan optimize:clear
+```
+Generate key for the app to work
+```
 -php artisan key:generate
 ```
-DONE
+Run NPM
+```
+npm run dev
+```
+DONE!
