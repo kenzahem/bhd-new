@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="cupcake">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
@@ -27,6 +27,7 @@
         <x-slot:actions>
             <x-button label="Home" icon="o-home" link="/" class="btn-ghost btn-sm" responsive />
             <x-button label="Browse Rooms" icon="o-building-office-2" link="/rooms/browse" class="btn-ghost btn-sm" responsive />
+            <x-theme-toggle class="btn btn-circle btn-ghost" />
             @auth
             <x-dropdown>
                 <x-slot:trigger>
@@ -38,10 +39,11 @@
                 <x-menu-item title="Logout" wire:navigate href="/logout"/>
             </x-dropdown>
             @endauth
+
             @guest
                 <x-button label="Sign In" icon="o-user-circle" link="/auth/login" class="btn-ghost btn-sm" responsive />
             @endguest
-            <x-theme-toggle class="btn-ghost" @theme-changed="console.log($event.detail)" />
+
         </x-slot:actions>
     </x-nav>
 
@@ -55,6 +57,6 @@
     </x-main>
 
     {{--  TOAST area --}}
-    <x-toast />
+    <x-toast position="toast-top toast-center" />
 </body>
 </html>

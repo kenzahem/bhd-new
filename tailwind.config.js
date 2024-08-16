@@ -14,9 +14,7 @@ export default {
         extend: {},
     },
 
-    daisyui: {
-        themes: ["light", "dark", "cupcake"],
-    },
+    darkMode: 'class',
 
     // Add daisyUI
     plugins: [require("daisyui")]

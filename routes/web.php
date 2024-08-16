@@ -3,12 +3,12 @@
 use App\Livewire\Welcome;
 use App\Livewire\Homepage;
 use App\Livewire\Auth\Login;
-use App\Livewire\Auth\Logout;
 use App\Livewire\Auth\Register;
 use App\Livewire\Profile\Dashboard;
 use App\Livewire\Rooms\Browse;
 use App\Livewire\Rooms\Create;
 use App\Livewire\Rooms\Table;
+use App\Livewire\Rooms\UserPostRoom;
 use App\Livewire\Rooms\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +33,8 @@ Route::get('/auth/login', Login::class);
 Route::get('/auth/register', Register::class);
 
 Route::get('/profile', Dashboard::class);
+
+Route::get('/post-room', UserPostRoom::class);
 
 Route::get('/logout', function(){
     Auth::logout();
