@@ -4,13 +4,13 @@
     </div>
     <div class="flex justify-center mb-3">
         <x-card id="" class="border" shadow>
-            Credit Balance: {{ $userCredit }}
+           Credit: @livewire('user-credit-update')
         </x-card>
     </div>
 
     <div class="flex justify-center">
 
-        <x-card title="Create Room" class="border w-2/4" shadow>
+        <x-card title="Create Room" subtitle="1 Credit Required" class="border w-2/4" shadow>
             <form wire:submit="UsercreateRoom">
                 <div class="mb-3">
                     <x-input type="text" wire:model="title" label="Room Title" />

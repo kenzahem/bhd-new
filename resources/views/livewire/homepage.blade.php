@@ -1,6 +1,6 @@
 <div>
     <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        @foreach (App\Models\Room::all() as $rl)
+        @foreach ($latest_room as $rl)
         <div class="grid1-item border-rounded shadow-lg">
 
             <x-card title="{{ $rl->title }}">
