@@ -1,10 +1,11 @@
 <div>
     <div class="mb-3">
-        <x-button wire:navigate href="/rooms/table" label="Back" class="btn-secondary" icon="o-arrow-small-left" />
+        <x-button wire:navigate href="/rooms/browse" label="Back" class="btn-secondary" icon="o-arrow-small-left" />
     </div>
     <div class="flex justify-center mb-3">
         <x-card id="" class="border" shadow>
            Credit: @livewire('user-credit-update')
+           <button type="btn btn-ghost" wire:click="$refresh">Refresh</button>
         </x-card>
     </div>
 

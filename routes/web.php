@@ -45,6 +45,6 @@ Route::get('/rooms/create', Create::class);
 
 Route::get('/rooms/table', Table::class);
 
-Route::get('/rooms/{rooms}/view', View::class);
+Route::get('/rooms/{id}/view', View::class);
 
 Route::get('/rooms/browse', Browse::class);

@@ -12,14 +12,17 @@ class View extends Component
 
     public $room = [];
 
-    public function mount(Room $room)
+    public function mount(Room $id)
     {
-       $this->room = $room;
+       $this->room = $id;
     }
 
     public function render()
     {
-        return view('livewire.rooms.view');
+        $room = Room::all();
+        return view('livewire.rooms.view', [
+            'room' => $room
+        ]);
 
     }
 }

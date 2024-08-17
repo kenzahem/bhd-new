@@ -1,4 +1,23 @@
 <div>
+    @php
+        $slides = [
+            [
+                'image' => 'https://picsum.photos/id/13/2500/1667',
+            ],
+            [
+                'image' => 'https://picsum.photos/id/14/2500/1667',
+            ],
+            [
+                'image' => 'https://picsum.photos/id/15/2500/1667',
+            ],
+            [
+                'image' => 'https://picsum.photos/id/16/2500/1667',
+            ],
+        ];
+    @endphp
+
+<x-carousel :slides="$slides" />
+<div class="divider divider-primary"></div>
     <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-8">
         @foreach ($latest_room as $rl)
         <div class="grid1-item border-rounded shadow-lg">

@@ -11,7 +11,7 @@ class Homepage extends Component
 {
     public function render()
     {
-        $latest_room = DB::table('rooms')->latest()->first();
+        $latest_room = Room::latest('created_at')->get();
         return view('livewire.homepage', [
             'latest_room' => $latest_room
         ]);

@@ -42,10 +42,18 @@ class UserPostRoom extends Component
 
         $userID = Auth::user()->id;
 
-        $validated = $this->validate();
+        $this->validate();
 
         if(Auth::user()->credits >= 1){
-            Room::create($validated);
+            Room::create([
+                'title' => $this->title,
+                'full_desc' => $this->full_desc,
+                'short_desc' => $this->short_desc,
+                'wifi'  => $this->wifi,
+                'aircon' => $this->aircon,
+                'kitchen' => $this->kitchen,
+                'price' => $this->price
+            ]);
             DB::table('users', $userID)->decrement('credits' , 1);
             $this->success('Room Created!');
             $this->reset();

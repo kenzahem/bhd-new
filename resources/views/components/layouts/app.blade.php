@@ -23,25 +23,46 @@
             <div><strong>BHD</strong></div>
         </x-slot:brand>
 
+        @php
+            $user = App\Models\User::first();
+        @endphp
         {{-- Right side actions --}}
+        {{-- <ul class="menu lg:menu-horizontal bg-base-200 rounded-box lg:mb-64">
+            <li><a>Item 1</a></li>
+            <li>
+              <details open>
+                <summary>Parent item</summary>
+                <ul>
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                  <li>
+                    <details open>
+                      <summary>Parent</summary>
+                      <ul>
+                        <li><a>item 1</a></li>
+                        <li><a>item 2</a></li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li><a>Item 3</a></li>
+        </ul> --}}
         <x-slot:actions>
             <x-button label="Home" icon="o-home" link="/" class="btn-ghost btn-sm" responsive />
             <x-button label="Browse Rooms" icon="o-building-office-2" link="/rooms/browse" class="btn-ghost btn-sm" responsive />
             <x-theme-toggle class="btn btn-circle btn-ghost" />
             @auth
-            <x-dropdown>
-                <x-slot:trigger>
-                    <x-button icon="o-user" class="btn-circle btn-outline" />
-                </x-slot:trigger>
+            <x-dropdown label="{{ Auth::user()->firstname }}" class="btn-primary" right>
                 <x-menu-item title="Credits: {{ Auth::user()->credits }}"/>
                 <x-menu-separator />
                 <x-menu-item title="Profile" wire:navigate href="/profile" />
                 <x-menu-item title="Logout" wire:navigate href="/logout"/>
             </x-dropdown>
             @endauth
-
             @guest
-                <x-button label="Sign In" icon="o-user-circle" link="/auth/login" class="btn-ghost btn-sm" responsive />
+                <x-button icon="o-user" wire:navigate href="/auth/login" class="btn-circle btn-ghost" />
             @endguest
 
         </x-slot:actions>
