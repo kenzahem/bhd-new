@@ -4,6 +4,8 @@ use App\Livewire\Welcome;
 use App\Livewire\Homepage;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
+use App\Livewire\Backend\Dashboard as BackendDashboard;
+use App\Livewire\Backend\Rooms\Table as RoomsTable;
 use App\Livewire\Profile\Dashboard;
 use App\Livewire\Rooms\Browse;
 use App\Livewire\Rooms\Create;
@@ -48,3 +50,9 @@ Route::get('/rooms/table', Table::class);
 Route::get('/rooms/{id}/view', View::class);
 
 Route::get('/rooms/browse', Browse::class);
+
+
+//BACKEND
+
+Route::get('/admin' , BackendDashboard::class);
+Route::get('/admin/rooms', RoomsTable::class);
