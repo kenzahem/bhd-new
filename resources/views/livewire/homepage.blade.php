@@ -22,9 +22,9 @@
         @foreach ($latest_room as $rl)
         <div class="grid1-item border-rounded shadow-lg">
 
-            <x-card title="{{ $rl->title }}">
+            {{-- <x-card title="{{ $rl->title }}">
                 {{ $rl->short_desc }}
-                <x-slot:figure>
+                <x-slot:figure >
                     <img src="https://picsum.photos/500/200" />
                 </x-slot:figure>
                 <x-slot:menu>
@@ -34,7 +34,22 @@
                 <x-slot:actions>
                     <x-button label="View" link="{{ url('rooms/'.$rl->id.'/view') }}" class="btn-primary" />
                 </x-slot:actions>
-            </x-card>
+            </x-card> --}}
+
+            <div class="card card-compact bg-base-100 shadow-xl">
+                <figure>
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    alt="Shoes" />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title">{{ $rl->title }}</h2>
+                  <p>{{ $rl->short_desc }}</p>
+                  <div class="card-actions justify-end">
+                    <button wire:navigate href="{{ url('rooms/'.$rl->id.'/view') }}" class="btn btn-primary">View</button>
+                  </div>
+                </div>
+            </div>
 
         </div>
     @endforeach

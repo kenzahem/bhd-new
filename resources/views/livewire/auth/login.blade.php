@@ -1,6 +1,6 @@
 <div>
     <div class="flex justify-center">
-        <x-card title="Login" class="border w-2/4" shadow  >
+        <x-card title="Login" class="card-bordered w-2/4" shadow  >
             <x-form wire:submit="authLogin" no-separator>
                 <x-input type="email" label="E-mail Address" wire:model="email" />
                 <x-input type="password" label="Password" wire:model="password" />

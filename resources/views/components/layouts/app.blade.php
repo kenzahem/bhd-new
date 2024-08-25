@@ -11,7 +11,7 @@
 <body class="font-sans antialiased">
 
     {{-- The navbar with `sticky` and `full-width` --}}
-    <x-nav sticky full-width>
+    <x-nav sticky full-width shadow>
 
         <x-slot:brand>
             {{-- Drawer toggle for "main-drawer" --}}

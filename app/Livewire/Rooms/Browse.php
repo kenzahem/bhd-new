@@ -10,6 +10,8 @@ class Browse extends Component
 {
     use WithPagination;
 
+    public $filter_search = '';
+
     public function render()
     {
         $rooms = Room::paginate(8);
