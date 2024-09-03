@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->text('room_image1');
+            $table->text('room_image2');
+            $table->text('room_image3');
+            $table->text('room_image4');
+            $table->text('room_image5');
             $table->boolean('featured')->nullable();
             $table->string('title');
             $table->longText('full_desc');

@@ -6,12 +6,30 @@ use App\Models\Room;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Mary\Traits\Toast;
 
 class Create extends Component
 {
 
     use Toast;
+
+    use WithFileUploads;
+
+    #[Validate('required|image: jpg,png,jpeg')]
+    public $room_image1;
+
+    #[Validate('required|image: jpg,png,jpeg')]
+    public $room_image2;
+
+    #[Validate('required|image: jpg,png,jpeg')]
+    public $room_image3;
+
+    #[Validate('required|image: jpg,png,jpeg')]
+    public $room_image4;
+
+    #[Validate('required|image: jpg,png,jpeg')]
+    public $room_image5;
 
     #[Validate('required')]
     public $title = '';

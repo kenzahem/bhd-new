@@ -8,7 +8,7 @@
         @foreach ($rooms as $rl)
         <div class="grid1-item border-rounded shadow-lg">
 
-            <x-card title="{{ $rl->title }}">
+            <x-card title="{{ $rl->title }}" class="shadow-md">
                 {{ $rl->short_desc }}
                 <x-slot:figure>
                     <img src="https://picsum.photos/500/200" />

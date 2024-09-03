@@ -4,8 +4,7 @@
     </div>
     <div class="flex justify-center mb-3">
         <x-card id="" class="border" shadow>
-           Credit: @livewire('user-credit-update')
-           <button type="btn btn-ghost" wire:click="$refresh">Refresh</button>
+           Credit: <strong>{{ Auth::user()->credits }}</strong>
         </x-card>
     </div>
 
@@ -13,6 +12,22 @@
 
         <x-card title="Create Room" subtitle="1 Credit Required" class="border w-2/4" shadow>
             <form wire:submit="UsercreateRoom">
+                <div class="mb-3">
+                    <x-file wire:model="room_image1" label="Room Image 1" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
+                </div>
+                <div class="mb-3">
+                    <x-file wire:model="room_image2" label="Room Image 2" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
+                </div>
+                <div class="mb-3">
+                    <x-file wire:model="room_image3" label="Room Image 3" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
+                </div>
+                <div class="mb-3">
+                    <x-file wire:model="room_image4" label="Room Image 4" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
+                </div>
+                <div class="mb-3">
+                    <x-file wire:model="room_image5" label="Room Image 5" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
+                </div>
+
                 <div class="mb-3">
                     <x-input type="text" wire:model="title" label="Room Title" />
                 </div>

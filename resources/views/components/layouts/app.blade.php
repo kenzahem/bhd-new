@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
@@ -57,6 +57,8 @@
             <x-dropdown label="{{ Auth::user()->firstname }}" class="btn-primary" right>
                 <x-menu-item title="Credits: {{ Auth::user()->credits }}"/>
                 <x-menu-separator />
+                <x-menu-item title="Post Room" wire:navigate href="/post-room" />
+                <x-menu-separator />
                 <x-menu-item title="Profile" wire:navigate href="/profile" />
                 <x-menu-item title="Logout" wire:navigate href="/logout"/>
             </x-dropdown>
@@ -79,5 +81,6 @@
 
     {{--  TOAST area --}}
     <x-toast position="toast-top toast-center" />
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 </body>
 </html>

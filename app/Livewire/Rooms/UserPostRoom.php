@@ -9,11 +9,28 @@ use Livewire\Component;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 
 class UserPostRoom extends Component
 {
 
     use Toast;
+    use WithFileUploads;
+
+    #[Validate('required')]
+    public $room_image1;
+
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image2;
+
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image3;
+
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image4;
+
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image5;
 
     #[Validate('required')]
     public $title = '';
@@ -44,8 +61,19 @@ class UserPostRoom extends Component
 
         $this->validate();
 
+        $room_image1 = $this->room_image1;
+        $room_image2 = $this->room_image2;
+        $room_image3 = $this->room_image3;
+        $room_image4 = $this->room_image4;
+        $room_image5 = $this->room_image5;
+
         if(Auth::user()->credits >= 1){
             Room::create([
+                'room_image1' => $room_image1->store(path: 'public/room_images'),
+                'room_image2' => $room_image2->store(path: 'public/room_images'),
+                'room_image3' => $room_image3->store(path: 'public/room_images'),
+                'room_image4' => $room_image4->store(path: 'public/room_images'),
+                'room_image5' => $room_image5->store(path: 'public/room_images'),
                 'title' => $this->title,
                 'full_desc' => $this->full_desc,
                 'short_desc' => $this->short_desc,

@@ -13,9 +13,11 @@ export default {
     theme: {
         extend: {},
     },
-
-    darkMode: 'class',
-
+    daisyui: {
+        theme: [
+            'light'
+        ],
+    },
     // Add daisyUI
     plugins: [require("daisyui")]
 }
