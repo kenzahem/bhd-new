@@ -12,6 +12,7 @@
 
         <x-card title="Create Room" subtitle="1 Credit Required" class="border w-2/4" shadow>
             <form wire:submit="UsercreateRoom">
+                <x-input wire.model="user_id" type="text" value="{{ Auth::user()->id }}" hidden/>
                 <div class="mb-3">
                     <x-file wire:model="room_image1" label="Room Image 1" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
                 </div>

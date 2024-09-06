@@ -11,7 +11,7 @@
             <x-card title="{{ $rl->title }}" class="shadow-md">
                 {{ $rl->short_desc }}
                 <x-slot:figure>
-                    <img src="https://picsum.photos/500/200" />
+                    <img src="{{ Storage::url($rl->room_image1) }}" />
                 </x-slot:figure>
                 <x-slot:menu>
                     <x-button icon="o-share" class="btn-circle btn-sm" />

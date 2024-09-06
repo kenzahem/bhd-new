@@ -17,6 +17,8 @@ class UserPostRoom extends Component
     use Toast;
     use WithFileUploads;
 
+    public $user_id = '';
+
     #[Validate('required')]
     public $room_image1;
 
@@ -69,6 +71,7 @@ class UserPostRoom extends Component
 
         if(Auth::user()->credits >= 1){
             Room::create([
+                'user_id' => $this->user_id,
                 'room_image1' => $room_image1->store(path: 'public/room_images'),
                 'room_image2' => $room_image2->store(path: 'public/room_images'),
                 'room_image3' => $room_image3->store(path: 'public/room_images'),
