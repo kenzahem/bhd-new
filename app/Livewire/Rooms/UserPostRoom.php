@@ -17,22 +17,23 @@ class UserPostRoom extends Component
     use Toast;
     use WithFileUploads;
 
-    public $user_id = '';
+    // #[Validate('required')]
+    // public $user_id = '';
 
-    #[Validate('required')]
+    #[Validate('required|image:jpg,png,jpeg')]
     public $room_image1;
 
-    #[Validate('required|image:jpg,png,jpeg')]
-    public $room_image2;
+    // #[Validate('required|image:jpg,png,jpeg')]
+    // public $room_image2;
 
-    #[Validate('required|image:jpg,png,jpeg')]
-    public $room_image3;
+    // #[Validate('required|image:jpg,png,jpeg')]
+    // public $room_image3;
 
-    #[Validate('required|image:jpg,png,jpeg')]
-    public $room_image4;
+    // #[Validate('required|image:jpg,png,jpeg')]
+    // public $room_image4;
 
-    #[Validate('required|image:jpg,png,jpeg')]
-    public $room_image5;
+    // #[Validate('required|image:jpg,png,jpeg')]
+    // public $room_image5;
 
     #[Validate('required')]
     public $title = '';
@@ -71,7 +72,7 @@ class UserPostRoom extends Component
 
         if(Auth::user()->credits >= 1){
             Room::create([
-                'user_id' => $this->user_id,
+                'user_id' => $userID,
                 'room_image1' => $room_image1->store(path: 'public/room_images'),
                 'room_image2' => $room_image2->store(path: 'public/room_images'),
                 'room_image3' => $room_image3->store(path: 'public/room_images'),
@@ -93,14 +94,10 @@ class UserPostRoom extends Component
             $this->error('Insufficient Balance to Post');
             return redirect()->back();
         }
-
     }
 
     public function render()
     {
-        $userCredit = Auth::user()->credits;
-        return view('livewire.rooms.user-post-room', [
-            'userCredit' => $userCredit
-        ]);
+        return view('livewire.rooms.user-post-room');
     }
 }

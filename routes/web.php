@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Homepage::class);
 
-Route::get('/auth/login', Login::class);
+Route::get('/auth/login', Login::class)->name('login');
 
 Route::get('/auth/register', Register::class);
 
@@ -53,6 +53,8 @@ Route::get('/rooms/browse', Browse::class);
 
 
 //BACKEND
+Route::middleware(['auth'])->group( function(){
+    Route::get('/admin' , BackendDashboard::class);
+    Route::get('/admin/rooms', RoomsTable::class);
+});
 
-Route::get('/admin' , BackendDashboard::class);
-Route::get('/admin/rooms', RoomsTable::class);
