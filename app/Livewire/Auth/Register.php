@@ -23,8 +23,11 @@ class Register extends Component
     #[Validate('required')]
     public $email = '';
 
-    #[Validate('required')]
+    #[Validate('required|confirmed|min:8')]
     public $password = '';
+
+    #[Validate('required|min:8')]
+    public $password_confirmation = '';
 
     public function regUser()
     {
@@ -34,7 +37,7 @@ class Register extends Component
             'firstname' => $this->firstname,
             'lastname' => $this->lastname,
             'email' => $this->email,
-            'password' => Hash::make($this->password)
+            'password' => Hash::make($this->password),
         ]);
 
         $this->reset();
