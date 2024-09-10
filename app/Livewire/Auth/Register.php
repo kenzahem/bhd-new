@@ -23,10 +23,10 @@ class Register extends Component
     #[Validate('required')]
     public $email = '';
 
-    #[Validate('required|confirmed|min:8')]
+    #[Validate('required|confirmed|min:6')]
     public $password = '';
 
-    #[Validate('required|min:8')]
+    #[Validate('required|min:6')]
     public $password_confirmation = '';
 
     public function regUser()

@@ -1,7 +1,7 @@
 <div>
     <div>
         <x-card>
-            <x-input label="Filter Search" placeholder="Search Room" icon="o-magnifying-glass" />
+            <x-input label="Filter Search" wire:model.live="filter_search" placeholder="Search Room" icon="o-magnifying-glass" />
         </x-card>
     </div>
     <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-8">

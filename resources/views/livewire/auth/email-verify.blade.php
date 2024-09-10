@@ -1,0 +1,3 @@
+<div>
+    THIS IS EMAIL VERIFICATION VIEW
+</div>

@@ -23,17 +23,17 @@ class UserPostRoom extends Component
     #[Validate('required|image:jpg,png,jpeg')]
     public $room_image1;
 
-    // #[Validate('required|image:jpg,png,jpeg')]
-    // public $room_image2;
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image2;
 
-    // #[Validate('required|image:jpg,png,jpeg')]
-    // public $room_image3;
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image3;
 
-    // #[Validate('required|image:jpg,png,jpeg')]
-    // public $room_image4;
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image4;
 
-    // #[Validate('required|image:jpg,png,jpeg')]
-    // public $room_image5;
+    #[Validate('required|image:jpg,png,jpeg')]
+    public $room_image5;
 
     #[Validate('required')]
     public $title = '';

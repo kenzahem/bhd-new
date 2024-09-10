@@ -72,7 +72,8 @@
             </x-dropdown>
             @endauth
             @guest
-                <x-button icon="o-user" wire:navigate href="/auth/login" class="btn-circle btn-ghost" />
+                {{-- <x-button icon="o-user" wire:navigate href="/auth/login" class="btn-circle btn-ghost" /> --}}
+                <x-button label="Sign In" wire:navigate href="/auth/login" class="btn-outline" />
             @endguest
 
         </x-slot:actions>
