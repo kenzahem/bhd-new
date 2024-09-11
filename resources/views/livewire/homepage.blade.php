@@ -3,6 +3,10 @@
         $slides = [
             [
                 'image' => 'https://picsum.photos/id/13/2500/1667',
+                'title' => 'Affordable Rooms for Rent',
+                'description' => 'By the comfort of your home.',
+                'url' => '/rooms/browse',
+                'urlText' => 'Browse Our List',
             ],
             [
                 'image' => 'https://picsum.photos/id/14/2500/1667',

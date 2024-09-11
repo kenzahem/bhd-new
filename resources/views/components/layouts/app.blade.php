@@ -64,13 +64,13 @@
             <x-button label="Browse Rooms" icon="o-building-office-2" link="/rooms/browse" class="btn-ghost btn-sm" responsive />
             {{-- <x-theme-toggle class="btn btn-circle btn-ghost" /> --}}
             @auth
-            <x-dropdown label="{{ Auth::user()->firstname }}" class="btn-primary" right>
+            <x-dropdown label="Hi! {{ Auth::user()->firstname }}" class="btn-primary" right>
                 <x-menu-item title="Credits: {{ Auth::user()->credits }}"/>
                 <x-menu-separator />
                 <x-menu-item title="Post Room" wire:navigate href="/post-room" />
                 <x-menu-separator />
                 <x-menu-item title="Profile" wire:navigate href="/profile" />
-                <x-menu-item title="Logout" wire:navigate href="/logout"/>
+                <x-menu-item title="Logout" wire:navigate href="/logout" />
             </x-dropdown>
             @endauth
             @guest

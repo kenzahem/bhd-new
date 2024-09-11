@@ -24,9 +24,12 @@ class EditProfile extends Component
     public function mount(User $user)
     {
         $this->user = $user;
+        $user = $this->firstname;
+        $user = $this->lastname;
+        $user = $this->email;
     }
 
-    public function updateInfo()
+    public function updateInfo($id)
     {
         $user = Auth::user()->id;
 

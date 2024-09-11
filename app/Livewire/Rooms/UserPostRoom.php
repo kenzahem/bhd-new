@@ -16,20 +16,22 @@ class UserPostRoom extends Component
 
     use Toast;
     use WithFileUploads;
+    #[Validate('required')]
+    public $type = '';
 
-    #[Validate('required|image:jpg,png,jpeg')]
+    #[Validate('required', message: 'Please Provide an Valid Image')]
     public $room_image1;
 
-    #[Validate('required|image:jpg,png,jpeg')]
+    #[Validate('required', message: 'Please Provide an Valid Image')]
     public $room_image2;
 
-    #[Validate('required|image:jpg,png,jpeg')]
+    #[Validate('required', message: 'Please Provide an Valid Image')]
     public $room_image3;
 
-    #[Validate('required|image:jpg,png,jpeg')]
+    #[Validate('required', message: 'Please Provide an Valid Image')]
     public $room_image4;
 
-    #[Validate('required|image:jpg,png,jpeg')]
+    #[Validate('required', message: 'Please Provide an Valid Image')]
     public $room_image5;
 
     #[Validate('required')]
@@ -71,6 +73,7 @@ class UserPostRoom extends Component
         if(Auth::user()->credits >= 1){
             Room::create([
                 'user_id' => $userID,
+                'type' => $this->type,
                 'room_image1' => $room_image1->store(path: 'public/room_images'),
                 'room_image2' => $room_image2->store(path: 'public/room_images'),
                 'room_image3' => $room_image3->store(path: 'public/room_images'),
