@@ -16,6 +16,10 @@ Generate key for the app to work
 ```
 php artisan key:generate
 ```
+Storage Link
+```
+php artisan storage:link
+```
 Migrate Database
 ```
 php artisan migrate
