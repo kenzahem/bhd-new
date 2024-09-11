@@ -16,6 +16,10 @@ Generate key for the app to work
 ```
 php artisan key:generate
 ```
+Migrate Database
+```
+php artisan migrate
+```
 Run NPM
 ```
 npm run dev
