@@ -4,7 +4,8 @@
     </div>
     <div class="flex justify-center mb-3">
         <x-card id="" class="border" shadow>
-           Credit: <strong>{{ Auth::user()->credits }}</strong>
+           {{-- Credit: <strong>{{ Auth::user()->credits }}</strong> --}}
+           @livewire('user-credit-update')
         </x-card>
     </div>
 
@@ -12,19 +13,35 @@
 
         <x-card title="Create Room" subtitle="1 Credit Required" class="border w-2/4" shadow>
             <form wire:submit="UsercreateRoom">
+
                 <div class="mb-5">
+                    @if ($room_image1)
+                        <img src="{{ $room_image1->temporaryUrl() }}" class="h-40 rounded-lg" />
+                    @endif
                     <x-file wire:model="room_image1" label="Cover Photo" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
                 </div>
                 <div class="mb-5">
+                    @if ($room_image2)
+                        <img src="{{ $room_image2->temporaryUrl() }}" class="h-40 rounded-lg">
+                    @endif
                     <x-file wire:model="room_image2" label="Image 1" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
                 </div>
                 <div class="mb-5">
+                    @if ($room_image3)
+                        <img src="{{ $room_image3->temporaryUrl() }}" class="h-40 rounded-lg">
+                    @endif
                     <x-file wire:model="room_image3" label="Image 2" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
                 </div>
                 <div class="mb-5">
+                    @if ($room_image4)
+                        <img src="{{ $room_image4->temporaryUrl() }}" class="h-40 rounded-lg">
+                    @endif
                     <x-file wire:model="room_image4" label="Image 3" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
                 </div>
                 <div class="mb-5">
+                    @if ($room_image5)
+                        <img src="{{ $room_image5->temporaryUrl() }}" class="h-40 rounded-lg">
+                    @endif
                     <x-file wire:model="room_image5" label="Image 4" hint="Supported format: jpg,png,jpeg" accept="image/jpg,png,jpeg" />
                 </div>
 

@@ -13,11 +13,6 @@ export default {
     theme: {
         extend: {},
     },
-    daisyui: {
-        theme: [
-            'light'
-        ],
-    },
     // Add daisyUI
     plugins: [require("daisyui")]
 }

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Backend\Rooms\Table as RoomsTable;
 use App\Livewire\Backend\Dashboard as BackendDashboard;
+use App\Livewire\Profile\EditProfile;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
@@ -38,6 +39,7 @@ Route::get('/auth/register', Register::class);
 //AUTHENTICATED USERS
 Route::middleware(['auth'])->group( function(){
     Route::get('/profile', Dashboard::class);
+    Route::get('/profile/edit', EditProfile::class);
     Route::get('/post-room', UserPostRoom::class);
     Route::get('/logout', function(){
         Auth::logout();

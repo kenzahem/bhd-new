@@ -17,9 +17,6 @@ class UserPostRoom extends Component
     use Toast;
     use WithFileUploads;
 
-    // #[Validate('required')]
-    // public $user_id = '';
-
     #[Validate('required|image:jpg,png,jpeg')]
     public $room_image1;
 
@@ -55,6 +52,7 @@ class UserPostRoom extends Component
 
     #[Validate('required')]
     public $price = '';
+
 
 
     public function UsercreateRoom()

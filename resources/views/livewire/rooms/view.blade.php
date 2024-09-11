@@ -17,9 +17,18 @@
                 @endphp
 
                 <x-image-gallery :images="$images" class="h-40 rounded-box" />
+                {{-- <a data-fslightbox href="{{Storage::url($room->room_image1)}}">
+                    <img src="{{Storage::url($room->room_image1)}}" alt="Image" class="w-2/4">
+                </a>
+                <a data-fslightbox href="{{Storage::url($room->room_image1)}}">
+                    <img src="{{Storage::url($room->room_image1)}}" alt="Image" class="w-1/4">
+                </a> --}}
             </div>
-            <div class="col" separator>
-                ..
+            <div class="col">
+                Room Inclusion:
+                Wifi: {{ $room->wifi }} <br/>
+                Aircon: {{ $room->aircon }} <br/>
+                Kitchen: {{ $room->kitchen }} <br/>
             </div>
         </div>
         {{ $room->full_desc }}

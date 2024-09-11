@@ -14,6 +14,8 @@
     {{-- CURRENCY SCRIPT --}}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/robsontenorio/mary@0.44.2/libs/currency/currency.js"></script>
 
+
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
@@ -60,7 +62,7 @@
         <x-slot:actions>
             <x-button label="Home" icon="o-home" link="/" class="btn-ghost btn-sm" responsive />
             <x-button label="Browse Rooms" icon="o-building-office-2" link="/rooms/browse" class="btn-ghost btn-sm" responsive />
-            <x-theme-toggle class="btn btn-circle btn-ghost" />
+            {{-- <x-theme-toggle class="btn btn-circle btn-ghost" /> --}}
             @auth
             <x-dropdown label="{{ Auth::user()->firstname }}" class="btn-primary" right>
                 <x-menu-item title="Credits: {{ Auth::user()->credits }}"/>
@@ -87,6 +89,9 @@
             {{ $slot }}
         </x-slot:content>
     </x-main>
+
+    {{-- FSLIGHTBOX --}}
+    <script src="{{ asset('js/fslightbox.js') }}"></script>
 
     {{--  TOAST area --}}
     <x-toast position="toast-top toast-center" />
