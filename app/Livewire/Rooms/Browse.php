@@ -19,7 +19,7 @@ class Browse extends Component
 
     public function render()
     {
-        sleep(3);
+        // sleep(3);
         // $rooms = Room::paginate(8);
         return view('livewire.rooms.browse', [
             'rooms' => Room::where('title', 'like', '%'.$this->filter_search.'%')->paginate(6),
