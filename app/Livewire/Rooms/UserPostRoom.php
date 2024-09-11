@@ -16,6 +16,7 @@ class UserPostRoom extends Component
 
     use Toast;
     use WithFileUploads;
+
     #[Validate('required')]
     public $type = '';
 
