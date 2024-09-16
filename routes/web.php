@@ -49,7 +49,7 @@ Route::get('/rooms/browse', Browse::class)->lazy();
 
 
 //BACKEND
-Route::middleware(['CheckIfAdmin'])->group( function(){
+Route::middleware(['CheckIfAdmin', 'auth'])->group( function(){
     Route::get('/admin' , BackendDashboard::class);
     Route::get('/admin/rooms', RoomsTable::class);
     Route::get('/rooms/create', Create::class);
