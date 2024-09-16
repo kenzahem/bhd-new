@@ -9,7 +9,7 @@
         <div class="grid1-item border-rounded shadow-lg">
 
             <x-card title="{{ $rl->title }}" class="shadow-md">
-                {{ $rl->short_desc }}
+                {{ $rl->short_desc }} <x-badge class="badge-primary" value="{{ $rl->type }}" />
                 <x-slot:figure>
                     <img src="{{ Storage::url($rl->room_image1) }}" />
                 </x-slot:figure>

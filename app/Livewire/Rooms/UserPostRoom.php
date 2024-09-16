@@ -17,7 +17,7 @@ class UserPostRoom extends Component
     use Toast;
     use WithFileUploads;
 
-    #[Validate('required')]
+    #[Validate('required', message: "Please Select Type")]
     public $type = '';
 
     #[Validate('required', message: 'Please Provide an Valid Image')]

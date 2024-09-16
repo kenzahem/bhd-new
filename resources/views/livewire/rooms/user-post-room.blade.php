@@ -25,7 +25,7 @@
                     option-value="room_type"
                     option-label="room_type"
                     placeholder="Select a Room Type"
-                    placeholder-value="0" {{-- Set a value for placeholder. Default is `null` --}}
+                    placeholder-value="" {{-- Set a value for placeholder. Default is `null` --}}
                     hint="Select one"
                     wire:model="type" />
                 </div>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="mb-5">
                     <x-textarea
-                    label="Full Description"
+                    label="Short Description"
                     wire:model="short_desc"
                     placeholder="Input short details.."
                     hint="Max 250 chars"

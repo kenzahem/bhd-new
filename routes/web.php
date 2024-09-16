@@ -30,9 +30,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
 Route::get('/', Homepage::class)->name('home');
-
 Route::get('/auth/login', Login::class)->name('login');
-
 Route::get('/auth/register', Register::class);
 
 //AUTHENTICATED USERS
@@ -45,18 +43,19 @@ Route::middleware(['auth'])->group( function(){
     });
 });
 
-
+// PUBLIC ACCESS
 Route::get('/rooms/{id}/view', View::class);
 Route::get('/rooms/browse', Browse::class)->lazy();
 
 
 //BACKEND
-Route::middleware(['auth'])->group( function(){
+Route::middleware(['CheckIfAdmin'])->group( function(){
     Route::get('/admin' , BackendDashboard::class);
     Route::get('/admin/rooms', RoomsTable::class);
     Route::get('/rooms/create', Create::class);
     Route::get('/rooms/table', Table::class);
 });
+
 
 // Route::get('/email/verify', function () {
 //     return view('livewire.auth.email-verify');
