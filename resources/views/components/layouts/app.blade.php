@@ -14,7 +14,7 @@
     {{-- CURRENCY SCRIPT --}}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/robsontenorio/mary@0.44.2/libs/currency/currency.js"></script>
 
-
+    @livewireStyles()
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -92,7 +92,7 @@
             {{ $slot }}
         </x-slot:content>
     </x-main>
-
+    @livewireScripts()
     {{-- FSLIGHTBOX --}}
     <script src="{{ asset('js/fslightbox.js') }}"></script>
 
