@@ -69,11 +69,11 @@
                 <x-menu-separator />
                 <x-menu-item title="Post Room" wire:navigate href="/post-room" />
                 <x-menu-separator />
-                <x-menu-item title="Profile" wire:navigate href="/profile" />
+                <x-menu-item icon="o-user" title="Profile" wire:navigate href="/profile" />
                 @if (Auth::user()->role_id === 1)
-                    <x-menu-item title="Admin Panel" wire:navigate href="/admin" />
+                    <x-menu-item icon="o-cog" title="Admin Panel" wire:navigate href="/admin" />
                 @endif
-                <x-menu-item title="Logout" wire:navigate href="/logout" />
+                <x-menu-item icon="o-arrow-right-end-on-rectangle" title="Logout" wire:navigate href="/logout" />
             </x-dropdown>
             @endauth
             @guest

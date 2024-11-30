@@ -34,6 +34,8 @@ class UserUploadID extends Component
         $this->toast('success', 'Successfully Uploaded!');
 
         $this->reset();
+
+        return redirect()->back();
     }
 
     public function render()

@@ -5,7 +5,7 @@
 
     <x-card title="{{ $room->title }}" class="border" shadow>
         <div class="row">
-            <div class="col ">
+            <div class="col">
                 @php
                     $images = [
                         Storage::url($room->room_image1),

@@ -12,10 +12,13 @@
     @if (Auth::user()->valid_id === NULL)
         @livewire('parts.user-upload-i-d')
     @endif
-    <x-card title="Posted Room" class="border" shadow separator>
+    <x-card title="Posted Room" class="border" separator>
             <x-button label="Post Room" class="btn-primary" wire:navigate href="/post-room"/>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            ...
-        </div>
+
+        {{-- You can use any `$wire.METHOD` on `@row-click` --}}
+        <x-table :headers="$headers" :rows="$user_room" striped @row-click="alert($event.detail.name)" />
+        @empty(Auth::user()->room_count === 0)
+            <h2>No Room Posted</h2>
+        @endempty
     </x-card>
 </div>

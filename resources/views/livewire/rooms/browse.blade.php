@@ -17,6 +17,7 @@
                     <x-badge class="badge-primary" value="{{ $rl->type }}" />
                 </x-slot:menu>
                 <x-slot:actions>
+                    PHP {{ $rl->price }}
                     <x-button label="View" link="{{ url('rooms/'.$rl->id.'/view') }}" class="btn-primary" />
                 </x-slot:actions>
             </x-card>
