@@ -9,13 +9,12 @@
         <div class="grid1-item border-rounded shadow-lg">
 
             <x-card title="{{ $rl->title }}" class="shadow-md">
-                {{ $rl->short_desc }} <x-badge class="badge-primary" value="{{ $rl->type }}" />
+                {{ $rl->short_desc }}
                 <x-slot:figure>
-                    <img src="{{ Storage::url($rl->room_image1) }}" />
+                    <img src="{{ Storage::url($rl->room_image1) }}" class="h-40 rounded-lg" />
                 </x-slot:figure>
                 <x-slot:menu>
-                    <x-button icon="o-share" class="btn-circle btn-sm" />
-                    <x-icon name="o-heart" class="cursor-pointer" />
+                    <x-badge class="badge-primary" value="{{ $rl->type }}" />
                 </x-slot:menu>
                 <x-slot:actions>
                     <x-button label="View" link="{{ url('rooms/'.$rl->id.'/view') }}" class="btn-primary" />

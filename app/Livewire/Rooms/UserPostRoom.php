@@ -35,13 +35,16 @@ class UserPostRoom extends Component
     #[Validate('required', message: 'Please Provide an Valid Image')]
     public $room_image5;
 
-    #[Validate('required')]
+    #[Validate('required', message: "Title is Required")]
+    #[Validate('max: 15')]
     public $title = '';
 
     #[Validate('required')]
+    #[Validate('max:255')]
     public $full_desc = '';
 
     #[Validate('required')]
+    #[Validate('max:100')]
     public $short_desc = '';
 
     #[Validate('required')]
@@ -70,6 +73,8 @@ class UserPostRoom extends Component
         $room_image3 = $this->room_image3;
         $room_image4 = $this->room_image4;
         $room_image5 = $this->room_image5;
+
+        sleep(3);
 
         if(Auth::user()->credits >= 1){
             Room::create([

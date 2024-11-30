@@ -13,7 +13,7 @@
     {{-- NAVBAR mobile only --}}
     <x-nav sticky class="lg:hidden">
         <x-slot:brand>
-            <div class="ml-5 pt-5">App</div>
+            <div class="ml-5 pt-5">BHD Admin Panel</div>
         </x-slot:brand>
         <x-slot:actions>
             <label for="main-drawer" class="lg:hidden mr-3">
@@ -28,7 +28,7 @@
         <x-slot:sidebar drawer="main-drawer" collapsible class="bg-base-100 lg:bg-inherit">
 
             {{-- BRAND --}}
-            <div class="ml-5 pt-5">App</div>
+            <div class="ml-5 pt-5">BHD</div>
 
             {{-- MENU --}}
             <x-menu activate-by-route>
@@ -46,7 +46,8 @@
                     <x-menu-separator />
                 @endif
 
-                <x-menu-item title="Hello" icon="o-sparkles" link="/" />
+                <x-menu-item title="Dashboard" icon="o-sparkles" link="/admin" />
+                <x-menu-item title="Rooms" icon="o-sparkles" link="/admin/rooms" />
                 <x-menu-sub title="Settings" icon="o-cog-6-tooth">
                     <x-menu-item title="Wifi" icon="o-wifi" link="####" />
                     <x-menu-item title="Archives" icon="o-archive-box" link="####" />

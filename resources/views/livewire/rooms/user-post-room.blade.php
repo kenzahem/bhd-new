@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="mb-5">
-                    <x-input type="text" wire:model="title" label="Room Title" />
+                    <x-input type="text" wire:model.live="title" label="Room Title" />
                 </div>
                 <div class="mb-5">
                     <x-textarea
@@ -77,7 +77,7 @@
                     label="Short Description"
                     wire:model="short_desc"
                     placeholder="Input short details.."
-                    hint="Max 250 chars"
+                    hint="Max 100 chars"
                     rows="5"
                     inline />
                 </div>
@@ -94,8 +94,10 @@
                     <x-input label="Price" wire:model="price" prefix="PHP" money inline />
                 </div>
                 <div class="mb-3">
-                    <x-button label="Cancel" />
                     <x-button label="Submit" class="btn-primary" type="submit" spinner="save" />
+                    <div wire:loading>
+                        Submitting...
+                    </div>
                 </div>
             </form>
         </x-card>
